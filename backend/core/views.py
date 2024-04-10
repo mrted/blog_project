@@ -18,7 +18,13 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 
 class BlogViewSet(viewsets.ModelViewSet):
-    queryset = Blog.objects.all()
     serializer_class = BlogSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Blog.objects.filter(author=user)
+    
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
 
