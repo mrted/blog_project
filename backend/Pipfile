@@ -10,6 +10,7 @@ django-environ = "*"
 psycopg2-binary = "*"
 pillow = "*"
 djangorestframework-simplejwt = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
