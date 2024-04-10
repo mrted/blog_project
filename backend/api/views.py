@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from.models import Category, Blog
-from.serializers import CategorySerializer, BlogSerializer, UserSerializer
+from .serializers import CategorySerializer, BlogSerializer, UserSerializer
 from rest_framework import viewsets
 
 
@@ -27,4 +27,3 @@ class BlogViewSet(viewsets.ModelViewSet):
     
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
-
