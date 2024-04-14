@@ -11,6 +11,8 @@ psycopg2-binary = "*"
 pillow = "*"
 djangorestframework-simplejwt = "*"
 django-cors-headers = "*"
+drf-yasg = "*"
+setuptools = "*"
 
 [dev-packages]
 

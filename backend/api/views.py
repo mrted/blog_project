@@ -6,18 +6,27 @@ from rest_framework import viewsets
 
 
 class UserViewSet(viewsets.ModelViewSet):
+    """
+    A viewset for viewing, creating, updating, and deleting user instances.
+    """
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
+    """
+    A viewset for viewing, creating, updating, and deleting blog category instances.
+    """
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [AllowAny]
 
 
 class BlogViewSet(viewsets.ModelViewSet):
+    """
+    A viewset for viewing, creating, updating, and deleting blog instances.
+    """
     serializer_class = BlogSerializer
     permission_classes = [IsAuthenticated]
 
